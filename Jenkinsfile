@@ -1,5 +1,9 @@
 pipeline {
-    agent macOS
+    agent {
+        node {
+            label 'macos'
+        }
+    }
     parameters {
         string(name: 'client_name', defaultValue: 'eko', description: 'The client folder name, used as config for building')
     }
